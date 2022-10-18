@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
                     updateFaculti()
                     updateStudents()
                     updateTextView2(facultets[current_fac])
-                    if (all_students.size > 0) {
+                    if (students.size > 0) {
                         updateTextView(students[current].first_name)
                     }
                     else{
@@ -131,7 +131,12 @@ class MainActivity : AppCompatActivity() {
             all_students.filter{ it.faculti == facultets[current_fac] }.toMutableList()
         }
         current = 0
-        updateTextView(students[current].first_name)
+        if(all_students.size!=0){
+            updateTextView(students[current].first_name)
+        }
+        else{
+            updateTextView("")
+        }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

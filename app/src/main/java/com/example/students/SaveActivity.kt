@@ -62,7 +62,7 @@ class SaveActivity : AppCompatActivity() {
             last_name.error = "Неправильно введены данные"
             return false
         }
-        if(check3(birth_day.text.toString())){
+        if(!check3(birth_day.text.toString())){
             birth_day.error ="Неправидьно введены данные"
             return false
         }
@@ -157,7 +157,7 @@ class SaveActivity : AppCompatActivity() {
                 text.contains("~")
     }
     private fun check3(text:String):Boolean{
-        if(text.length != 11 ||!text.contains('-')) {
+        if(text.length != 10 ||!text.contains('-')) {
             return false
         } else {
             val year = text.split("-")[0].toInt()
